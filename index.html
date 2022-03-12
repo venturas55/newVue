@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Mi nueva app</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- HEADER -->
+        <header class="cabecera">
+            <h1> CABECERA</h1>
+            <button class="item" @click="verOpciones=true">OPCIONES</button>
+        </header>
+
+        <!-- BODY -->
+        <div class="contenedor">
+            <div class="contenedorFlex">
+                <button v-if="!practicando" class="item" @click="accion()">Boton</button>
+            </div>
+        </div>
+
+        <!-- MODAL OPCIONES -->
+        <div class="contenedorModal" v-show="verOpciones">
+            <div class="header">
+                <button class="close" @click="verOpciones=false">X</button>
+                <h1>OPCIONES</h1>
+            </div>
+            <div class="contenido">
+                <div class="item">
+                    <p>Opcion1</p>
+                    <p>Opcion2</p>
+                    <p>Opcion3</p>
+                </div>
+
+                <button @click="cargarOpciones()">CARGAR</button>
+                <button @click="guardarOpciones()">GUARDAR</button>
+                <button @click="verOpciones=false">CANCELAR</button>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">Adrian de Haro Ortega. <span class="copyleft"> &copy; </span> Pie de mi App · Todos los derechos reservados</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>
